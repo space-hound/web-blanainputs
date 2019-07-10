@@ -1,11 +1,11 @@
 # web-blanainputs
 
- - [Live Demo Here!](https://space-hound.github.io/web-blanainputs/)
+[Live Demo Here!](https://space-hound.github.io/web-blanainputs/)
 
 This is a collection of 5 inputs made from scratch using pure JavaScript and SCSS.
- - Text
- - Numeric
- - Interval
+ - [Text](#text-input)
+ - [Numeric](#numerical-input)
+ - [Interval](#interval-input)
  - Carousel
  - Select
 
