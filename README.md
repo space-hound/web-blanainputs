@@ -6,8 +6,9 @@ This is a collection of 5 inputs made from scratch using pure JavaScript and SCS
  - [Text](#text-input)
  - [Numeric](#numerical-input)
  - [Interval](#interval-input)
- - Carousel
- - Select
+ - [Carousel](#carousel)
+ - [Select](#select-input)
+ - [Submit](#submit-input)
 
 ## Text Input
 
@@ -142,5 +143,117 @@ blanaInterval.min;
 
 // the max numerical input
 blanaInterval.max
+```
+
+## Carousel
+
+This is just a text carousel that is used at the select input.
+
+ - [blana-carousel.js](https://github.com/space-hound/web-blanainputs/blob/master/src/js/BlanaCarousel/_blana-carousel.js)
+- [blana-carousel.scss](https://github.com/space-hound/web-blanainputs/blob/master/src/scss/BlanaCarousel/blana-carousel.scss)
+
+<p align="center">
+	<img src="https://i.imgur.com/bp3LUjW.png" alt="logo">
+<p/>
+
+<p align="center">
+	<img src="https://i.imgur.com/0fXJxnM.gif" alt="logo">
+<p/>
+
+```html
+<div  class="blana blana-carousel blana-night temp temp-blana-carousel">
+	<div  class="blana-arrow blana-arrow-left">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+	<div  class="blana-carousel-content">
+		<div  class="blana-slider">
+			<div  class="blana-slider-content">
+				<p>Slide 1</p>
+			</div>
+			<div  class="blana-slider-content">
+				<p>Slide 2</p>
+			</div>
+			<div  class="blana-slider-content">
+				<p>Slide 3</p>
+			</div>
+		</div>
+	</div>
+	
+	<div  class="blana-arrow blana-arrow-right">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+```
+
+```javascript
+let blanaCarousel = BlanaCarousel(document.querySelector(".temp-blana-carousel"));
+
+// get or set the current index
+blanaText.setCurrent([index]);
+```
+
+## Select Input
+
+A custom select input made with the custom carousel.
+
+ - [blana-select.js](https://github.com/space-hound/web-blanainputs/blob/master/src/js/BlanaSelect/_blana-select.js)
+- [blana-select.scss](https://github.com/space-hound/web-blanainputs/blob/master/src/scss/BlanaSelect/blana-select.scss)
+
+<p align="center">
+	<img src="https://i.imgur.com/feIFy6o.png">
+<p/>
+
+<p align="center">
+	<img src="https://i.imgur.com/pYHb3ha.gif">
+<p/>
+
+```html
+<div class="blana blana-select blana-night temp temp-blana-select">
+	<select id="blana-select-1">
+		<option value="1">Option 1</option>
+		<option value="2">Option 2</option>
+		<option value="3">Option 3</option>
+		<option value="4">Option 4</option>
+		<option value="5">Option 5</option>
+		<option value="6">Option 6</option>
+	</select>
+	
+	<label for="blana-select-1">select</label>
+	
+	<div class="blana-select-status">
+		<span class="current">1</span> / <span class="count">4</span>
+	</div>
+</div>
+```
+
+```javascript
+let blanaSelect = BlanaSelect(document.querySelector(".temp-blana-select"));
+
+// get or set the current index
+blanaSelect.selected([index]);
+
+// get the selected value
+blanaSelect.selectedValue();
+```
+
+## Submit Input
+
+This is just a custom style for a submit input button, it has no logic attached.
+
+ - [blana-submit.scss](https://github.com/space-hound/web-blanainputs/blob/master/src/scss/BlanaSubmit/blana-submit.scss)
+
+<p align="center">
+	<img src="https://i.imgur.com/nyvRpuQ.gif">
+<p/>
+
+```html
+<div class="blana blana-submit blana-night temp">
+	<input type="submit" value="Finish">
+</div>
 ```
 
