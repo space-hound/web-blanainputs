@@ -3,7 +3,7 @@ import _BlanaNumeric from "./../BlanaNumeric/_blana-numeric";
 import { getMin, getMax, events } from "./_utils";
 
 export default class _BlanaInterval {
-    constructor( element, options) {
+    constructor(element, options = {}) {
         this.element = element;
 
         this.min = new _BlanaNumeric(getMin(this.element), options.min);
@@ -28,20 +28,20 @@ export default class _BlanaInterval {
         this.max.input.removeEventListener("focusout", this.onFocusOutMax);
     }
 
-/*=============================================================================================*/
-// "PRIVATES"
-/*=============================================================================================*/
+    /*=============================================================================================*/
+    // "PRIVATES"
+    /*=============================================================================================*/
 
 
-/*=============================================================================================*/
-// "PUBLICS"
-/*=============================================================================================*/
+    /*=============================================================================================*/
+    // "PUBLICS"
+    /*=============================================================================================*/
 
     value(value) {
-        if(value !== undefined) {
-            if(Array.isArray(value)) {
-                if(!isNaN(value[0]) && !isNaN(value[1])) {
-                    if(value[0] < value[1]) {
+        if (value !== undefined) {
+            if (Array.isArray(value)) {
+                if (!isNaN(value[0]) && !isNaN(value[1])) {
+                    if (value[0] < value[1]) {
                         this.min.value(value[0]);
                         this.max.value(value[1]);
 

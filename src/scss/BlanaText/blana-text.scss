@@ -12,6 +12,7 @@
         display: inline-block;
         position: absolute;
         top: 0;
+        left: 0;
         transform: translateY(-50%);
         margin-left: 16px;
         padding: 0 6px;
@@ -55,18 +56,16 @@
                 color: $app-blue;
                 border-color: $app-blue;
             }
-    
+
             label {
                 color: $app-red;
             }
         }
 
         &.blana-has-value {
-            input[type=text] {
-            }
-    
-            label {
-            }
+            input[type=text] {}
+
+            label {}
         }
     }
 }

@@ -3,7 +3,7 @@ import { setOptions, events, allowedChars } from "./_utils";
 
 
 export default class _BlanaNumeric extends _BlanaText {
-    constructor( element, options ) {
+    constructor(element, options) {
         super(element);
 
         this.options = setOptions(options);
@@ -11,7 +11,7 @@ export default class _BlanaNumeric extends _BlanaText {
 
     Build() {
         super.Build();
-        
+
         this.onInput = events.onInput.bind(this);
         this.input.addEventListener("input", this.onInput);
         this.onWheel = events.onWheel.bind(this);
@@ -28,9 +28,9 @@ export default class _BlanaNumeric extends _BlanaText {
         this.input.removeEventListener("paste", this.onPaste);
     }
 
-/*=============================================================================================*/
-// "PRIVATES"
-/*=============================================================================================*/
+    /*=============================================================================================*/
+    // "PRIVATES"
+    /*=============================================================================================*/
 
     __isNaN() {
         return isNaN(this.value());
@@ -54,38 +54,38 @@ export default class _BlanaNumeric extends _BlanaText {
     }
 
     __restrictToNumbers() {
-        if(this.value() === "") {
+        if (this.value() === "") {
             return;
         }
 
-        if(this.options.allowNegatives) {
-            if(this.value() === "-") {
+        if (this.options.allowNegatives) {
+            if (this.value() === "-") {
                 return;
             }
         }
 
-        if(!allowedChars.includes(this.__getLastChar())) {
+        if (!allowedChars.includes(this.__getLastChar())) {
             this.__trimLastChar();
         }
 
-        if(!this.__isInRange(this.value())) {
+        if (!this.__isInRange(this.value())) {
             this.__trimLastChar();
         }
     }
 
     __increment(sign) {
-        if(this.__isNaN()) {return;}
+        if (this.__isNaN()) { return; }
 
         const value = new Number(this.value());
         const newValue = value + (sign * this.options.increment);
 
-        if(!this.__isInRange(newValue)) {return;}
+        if (!this.__isInRange(newValue)) { return; }
 
         this.value(newValue);
     }
 
-/*=============================================================================================*/
-// "PUBLICS"
-/*=============================================================================================*/
+    /*=============================================================================================*/
+    // "PUBLICS"
+    /*=============================================================================================*/
 
 }
